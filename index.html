@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jemaa Nadine | Full-Stack & AI Developer</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%237c3aed'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='26' fill='white'>NJ</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Animated background -->
+  <div class="bg-grid"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket">&lt;</span>NJ<span class="logo-bracket">/&gt;</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about" data-en="About" data-fr="À propos">About</a></li>
+      <li><a href="#skills" data-en="Skills" data-fr="Compétences">Skills</a></li>
+      <li><a href="#experience" data-en="Experience" data-fr="Expérience">Experience</a></li>
+      <li><a href="#projects" data-en="Projects" data-fr="Projets">Projects</a></li>
+      <li><a href="#certifications" data-en="Certifications" data-fr="Certifications">Certifications</a></li>
+      <li><a href="#contact" data-en="Contact" data-fr="Contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></button>
+    <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+      <span class="lang-active">EN</span><span class="lang-sep">|</span><span class="lang-other">FR</span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <p class="hero-greeting" data-en="Hello, World! I'm" data-fr="Bonjour, je suis">Hello, World! I'm</p>
+      <h1 class="hero-name">Jemaa <span class="accent">Nadine</span></h1>
+      <div class="hero-typewriter">
+        <span class="typewriter-prefix">const role = "</span><span id="typewriter"></span><span class="typewriter-cursor">|</span><span class="typewriter-prefix">"</span>
+      </div>
+      <p class="hero-bio" data-en="Junior Software Developer crafting intelligent full-stack applications — from sleek frontends to AI-powered backends." data-fr="Développeuse logicielle junior créant des applications full-stack intelligentes — des interfaces soignées aux backends propulsés par l'IA.">
+        Junior Software Developer crafting intelligent full-stack applications — from sleek frontends to AI-powered backends.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary" data-en="View Projects" data-fr="Voir les projets">View Projects</a>
+        <a href="#contact" class="btn btn-outline" data-en="Get In Touch" data-fr="Me contacter">Get In Touch</a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://github.com/NadineNJ" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/jemaa-nadine-62451626a" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:jemaanadine24@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="code-card">
+        <div class="code-card-header">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="code-filename">nadine.js</span>
+        </div>
+        <pre class="code-body"><code><span class="c-keyword">const</span> <span class="c-var">developer</span> = {
+  <span class="c-prop">name</span>: <span class="c-str">"Jemaa Nadine"</span>,
+  <span class="c-prop">role</span>: <span class="c-str">"Full-Stack & AI Dev"</span>,
+  <span class="c-prop">stack</span>: [<span class="c-str">"Angular"</span>, <span class="c-str">"Node.js"</span>,
+           <span class="c-str">"Python"</span>, <span class="c-str">"Flask"</span>],
+  <span class="c-prop">ai</span>: [<span class="c-str">"CNN"</span>, <span class="c-str">"MediaPipe"</span>,
+       <span class="c-str">"Scikit-learn"</span>],
+  <span class="c-prop">available</span>: <span class="c-keyword">true</span>,
+  <span class="c-prop">passion</span>: <span class="c-str">"Building things that matter"</span>
+};</code></pre>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title" data-en="About <span class='accent'>Me</span>" data-fr="À propos <span class='accent'>de moi</span>">About <span class="accent">Me</span></h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p data-en="I'm a <strong>Junior Software Developer</strong> based in Ben Arous, Tunisia, currently pursuing an Engineering Cycle at <strong>ESPRIT</strong>. I specialize in building full-stack web applications and integrating AI/ML models into real-world products." data-fr="Je suis une <strong>développeuse logicielle junior</strong> basée à Ben Arous, Tunisie, actuellement en cycle ingénieur à <strong>ESPRIT</strong>. Je me spécialise dans le développement d'applications web full-stack et l'intégration de modèles IA/ML.">
+            I'm a <strong>Junior Software Developer</strong> based in Ben Arous, Tunisia, currently pursuing an Engineering Cycle at <strong>ESPRIT</strong>. I specialize in building full-stack web applications and integrating AI/ML models into real-world products.
+          </p>
+          <p data-en="My journey spans from responsive frontends to intelligent backends — I've built a skin cancer detection system, an e-commerce platform with an AI chatbot, and I'm currently working on a real-time sign language recognition system." data-fr="Mon parcours va des interfaces responsives aux backends intelligents — j'ai développé un système de détection du cancer de la peau, une plateforme e-commerce avec chatbot IA, et je travaille sur un système de reconnaissance de la langue des signes en temps réel.">
+            My journey spans from responsive frontends to intelligent backends — I've built a skin cancer detection system, an e-commerce platform with an AI chatbot, and I'm currently working on a real-time sign language recognition system.
+          </p>
+          <p data-en="I thrive in dynamic environments, love solving complex problems, and I'm always looking for the next challenge that pushes my skills further." data-fr="Je m'épanouis dans des environnements dynamiques, j'aime résoudre des problèmes complexes et je suis toujours à la recherche du prochain défi qui pousse mes compétences plus loin.">
+            I thrive in dynamic environments, love solving complex problems, and I'm always looking for the next challenge that pushes my skills further.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">5+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">5</span>
+              <span class="stat-label">Certifications</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">3</span>
+              <span class="stat-label">Languages</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">2</span>
+              <span class="stat-label">Years Coding</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-details">
+          <div class="detail-card">
+            <i class="fas fa-map-marker-alt accent"></i>
+            <div>
+              <strong>Location</strong>
+              <span>Ben Arous, El Mourouj, Tunisia</span>
+            </div>
+          </div>
+          <div class="detail-card">
+            <i class="fas fa-graduation-cap accent"></i>
+            <div>
+              <strong>Education</strong>
+              <span>Engineering Cycle @ ESPRIT (2025–Present)</span>
+            </div>
+          </div>
+          <div class="detail-card">
+            <i class="fas fa-briefcase accent"></i>
+            <div>
+              <strong>Experience</strong>
+              <span>Internship @ IECD Tunisie · Final Year Project @ SBI</span>
+            </div>
+          </div>
+          <div class="detail-card">
+            <i class="fas fa-language accent"></i>
+            <div>
+              <strong>Languages</strong>
+              <span>Arabic (Native) · English (B2) · French (B1/B2)</span>
+            </div>
+          </div>
+          <div class="detail-card">
+            <i class="fas fa-users accent"></i>
+            <div>
+              <strong>Community</strong>
+              <span>Member @ JCI El Mourouj (2025)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title" data-en="Technical <span class='accent'>Skills</span>" data-fr="Compétences <span class='accent'>Techniques</span>">Technical <span class="accent">Skills</span></h2>
+      <div class="skills-grid">
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <i class="fas fa-code"></i>
+            <h3>Languages</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Java</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <i class="fas fa-layer-group"></i>
+            <h3>Web & Mobile</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">Angular</span>
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Flask</span>
+            <span class="tag">Springboot</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">Flutter</span>
+            <span class="tag">Android Studio</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <i class="fas fa-brain"></i>
+            <h3>AI / Data</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag highlight">Machine Learning</span>
+            <span class="tag highlight">Deep Learning (CNN)</span>
+            <span class="tag highlight">Transfer Learning</span>
+            <span class="tag highlight">Scikit-learn</span>
+            <span class="tag highlight">MediaPipe</span>
+            <span class="tag highlight">OpenCV</span>
+            <span class="tag highlight">NLP</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <i class="fas fa-database"></i>
+            <h3>Databases</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">MySQL</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">PostgreSQL</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <i class="fas fa-tools"></i>
+            <h3>Tools & Methods</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">Git / GitHub</span>
+            <span class="tag">Postman</span>
+            <span class="tag">Kaggle</span>
+            <span class="tag">VS Code</span>
+            <span class="tag">IntelliJ IDEA</span>
+            <span class="tag">Agile / Scrum</span>
+            <span class="tag">UML</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title" data-en="Professional <span class='accent'>Experience</span>" data-fr="Expérience <span class='accent'>Professionnelle</span>">Professional <span class="accent">Experience</span></h2>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3>Final Year Project</h3>
+                <span class="timeline-company">SBI — Tunis</span>
+              </div>
+              <span class="timeline-date">2025</span>
+            </div>
+            <ul class="timeline-list">
+              <li>Developed an intelligent skin cancer detection system using ML models with full data processing pipeline.</li>
+              <li>Implemented automatic classification of medical images achieving satisfactory accuracy on test datasets.</li>
+              <li>Built backend with <strong>Flask</strong> and frontend with <strong>Angular</strong>, integrating ML models into a functional web app.</li>
+              <li>Created an automated diagnostic report generation system with PDF export via an interactive web interface.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>Angular</span><span>Flask</span><span>Python</span><span>CNN</span><span>Deep Learning</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3>Summer Internship</h3>
+                <span class="timeline-company">IECD Tunisie — Sousse</span>
+              </div>
+              <span class="timeline-date">2024</span>
+            </div>
+            <ul class="timeline-list">
+              <li>Improved user experience by simplifying navigation and reducing access time to key features.</li>
+              <li>Optimized content presentation for readability and visual consistency across mobile and desktop platforms.</li>
+              <li>Applied responsive design principles throughout the project.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title" data-en="Featured <span class='accent'>Projects</span>" data-fr="Mes <span class='accent'>Projets</span>">Featured <span class="accent">Projects</span></h2>
+      <div class="projects-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ai">AI / ML</button>
+        <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+        <button class="filter-btn" data-filter="frontend">Frontend</button>
+      </div>
+      <div class="projects-grid" id="projectsGrid">
+
+        <div class="project-card" data-category="ai">
+          <div class="project-badge">🔬 AI / ML</div>
+          <div class="project-icon"><i class="fas fa-microscope"></i></div>
+          <h3>Skin Cancer Detection System</h3>
+          <p>Full-stack web application for skin cancer detection using deep learning. Upload lesion images and get classification, confidence scores, medical definitions, and automated PDF diagnostic reports.</p>
+          <div class="project-tech">
+            <span>Angular</span><span>Flask</span><span>Python</span><span>CNN</span><span>Transfer Learning</span>
+          </div>
+          <div class="project-highlights">
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> Medical image classification</div>
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> PDF report generation</div>
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> Deep learning model integration</div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/NadineNJ/Skin_Cancer_Platform" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card featured" data-category="ai">
+          <div class="project-badge">🤟 In Progress</div>
+          <div class="project-icon"><i class="fas fa-hand-paper"></i></div>
+          <h3>Sign Language Recognition System</h3>
+          <p>Real-time translation of hand gestures into text using a webcam. Designed to facilitate communication in messaging applications for the hearing-impaired community.</p>
+          <div class="project-tech">
+            <span>Python</span><span>MediaPipe</span><span>OpenCV</span><span>Machine Learning</span>
+          </div>
+          <div class="project-highlights">
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> Real-time webcam processing</div>
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> Hand tracking & detection</div>
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> Gesture-to-text translation</div>
+          </div>
+          <div class="project-links">
+            <span class="project-link coming-soon"><i class="fas fa-clock"></i> Repo Coming Soon</span>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="fullstack">
+          <div class="project-badge">🛒 Full-Stack</div>
+          <div class="project-icon"><i class="fas fa-shopping-cart"></i></div>
+          <h3>Shopper Tunisie — E-commerce Platform</h3>
+          <p>Modern full-stack e-commerce platform with secure authentication, dynamic cart synchronization, complete checkout workflow, and an AI-powered chatbot for personalized product recommendations.</p>
+          <div class="project-tech">
+            <span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>AI Chatbot</span>
+          </div>
+          <div class="project-highlights">
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> Real-time cart sync</div>
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> AI product recommendations</div>
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> Secure authentication</div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/NadineNJ/e-commerce" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="frontend">
+          <div class="project-badge">💻 Frontend</div>
+          <div class="project-icon"><i class="fas fa-desktop"></i></div>
+          <h3 data-en="DNC — Dispositif Nouvelle Chance" data-fr="DNC — Dispositif Nouvelle Chance">DNC — Dispositif Nouvelle Chance</h3>
+          <p data-en="A civic-focused web platform built for DNC, a French social initiative supporting young people aged 18–30 with no job and no baccalaureate. The platform connects them with free employment opportunities, qualifying training programs, and professional mentoring — all backed by the State." data-fr="Plateforme web à vocation sociale pour le DNC, un dispositif d'insertion destiné aux jeunes de 18 à 30 ans sans emploi ni baccalauréat. La plateforme les oriente vers des offres d'emploi, des formations qualifiantes et un accompagnement professionnel — entièrement gratuit, soutenu par l'État.">A civic-focused web platform built for DNC, a French social initiative supporting young people aged 18–30 with no job and no baccalaureate. The platform connects them with free employment opportunities, qualifying training programs, and professional mentoring — all backed by the State.</p>
+          <div class="project-tech">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive Design</span><span>UX/UI</span>
+          </div>
+          <div class="project-highlights">
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> <span data-en="Social impact platform for youth insertion" data-fr="Plateforme d'impact social pour l'insertion des jeunes">Social impact platform for youth insertion</span></div>
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> <span data-en="Simplified navigation & optimized UX" data-fr="Navigation simplifiée & UX optimisée">Simplified navigation & optimized UX</span></div>
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> <span data-en="Fully responsive across mobile, tablet & desktop" data-fr="Entièrement responsive mobile, tablette & desktop">Fully responsive across mobile, tablet & desktop</span></div>
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> <span data-en="Accessible design for a wide, non-technical audience" data-fr="Design accessible pour un public large et non technique">Accessible design for a wide, non-technical audience</span></div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/NadineNJ/DNC-Dispositif-Nouvelle-Chance" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="frontend">
+          <div class="project-badge">💝 Frontend</div>
+          <div class="project-icon"><i class="fas fa-heart"></i></div>
+          <h3>Valentine's Day Interactive Website</h3>
+          <p>An interactive themed website allowing users to send personalized messages through a simple, intuitive, and responsive interface. Built with pure HTML, CSS, and JavaScript.</p>
+          <div class="project-tech">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+          <div class="project-highlights">
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> Personalized messaging</div>
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> Interactive animations</div>
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> Fully responsive</div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/NadineNJ/ValentinesDay" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="ai">
+          <div class="project-badge">🐍 Python</div>
+          <div class="project-icon"><i class="fas fa-birthday-cake"></i></div>
+          <h3>Birthday Cake — Python Turtle & Pygame</h3>
+          <p>A fun Python project that uses Turtle to draw a colorful birthday cake with multiple layers, candles, and decorations, and Pygame to play a birthday melody. Perfect for learning Python graphics.</p>
+          <div class="project-tech">
+            <span>Python</span><span>Turtle</span><span>Pygame</span>
+          </div>
+          <div class="project-highlights">
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> Turtle graphics</div>
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> Pygame audio</div>
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> Algorithmic thinking</div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/NadineNJ/Birthday-cake-turtle" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="fullstack">
+          <div class="project-badge">🍽️ Team Project</div>
+          <div class="project-icon"><i class="fas fa-utensils"></i></div>
+          <h3 data-en="Les 24 Saveurs — Restaurant App" data-fr="Les 24 Saveurs — Application Restaurant">Les 24 Saveurs — Restaurant App</h3>
+          <p data-en="A collaborative team project — a desktop restaurant management application built with JavaFX and SQL. Features separate Admin and Client interfaces. Forked and improved with UI customizations and feature enhancements." data-fr="Projet d'équipe collaboratif — une application de gestion de restaurant desktop développée avec JavaFX et SQL. Dispose d'interfaces séparées Admin et Client. Forkée et améliorée avec des personnalisations UI et de nouvelles fonctionnalités.">A collaborative team project — a desktop restaurant management application built with JavaFX and SQL. Features separate Admin and Client interfaces. Forked and improved with UI customizations and feature enhancements.</p>
+          <div class="project-tech">
+            <span>JavaFX</span><span>Java</span><span>MySQL</span><span>SQL</span>
+          </div>
+          <div class="project-highlights">
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> <span data-en="Dual interface: Admin & Client views" data-fr="Double interface : vue Admin & Client">Dual interface: Admin & Client views</span></div>
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> <span data-en="Desktop restaurant management system" data-fr="Système de gestion de restaurant desktop">Desktop restaurant management system</span></div>
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> <span data-en="Team collaboration & version control" data-fr="Collaboration en équipe & contrôle de version">Team collaboration & version control</span></div>
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> <span data-en="UI customizations & feature improvements" data-fr="Personnalisations UI & améliorations fonctionnelles">UI customizations & feature improvements</span></div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/AnibaSoumaya/Vf-Les24-Saveurs" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+            <span class="project-link team-badge"><i class="fas fa-users"></i> Team</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="container">
+      <h2 class="section-title" data-en="Certifications & <span class='accent'>Education</span>" data-fr="Certifications & <span class='accent'>Formation</span>">Certifications & <span class="accent">Education</span></h2>
+      <div class="cert-edu-grid">
+        <div class="cert-col">
+          <h3 class="sub-title"><i class="fas fa-certificate accent"></i> Certifications</h3>
+          <div class="cert-list">
+            <div class="cert-card">
+              <div class="cert-icon nvidia"><i class="fas fa-robot"></i></div>
+              <div class="cert-info">
+                <strong>Deep Learning</strong>
+                <span>NVIDIA · 2025</span>
+              </div>
+              <div class="cert-badge new">2025</div>
+            </div>
+            <div class="cert-card">
+              <div class="cert-icon nvidia"><i class="fas fa-comment-dots"></i></div>
+              <div class="cert-info">
+                <strong>Natural Language Processing (NLP)</strong>
+                <span>NVIDIA · 2025</span>
+              </div>
+              <div class="cert-badge new">2025</div>
+            </div>
+            <div class="cert-card">
+              <div class="cert-icon mongo"><i class="fas fa-database"></i></div>
+              <div class="cert-info">
+                <strong>MongoDB</strong>
+                <span>Great Learning Academy · 2024</span>
+              </div>
+              <div class="cert-badge">2024</div>
+            </div>
+            <div class="cert-card">
+              <div class="cert-icon sql"><i class="fas fa-table"></i></div>
+              <div class="cert-info">
+                <strong>SQL</strong>
+                <span>Great Learning Academy · 2024</span>
+              </div>
+              <div class="cert-badge">2024</div>
+            </div>
+            <div class="cert-card">
+              <div class="cert-icon agile"><i class="fas fa-tasks"></i></div>
+              <div class="cert-info">
+                <strong>Agile Project Management</strong>
+                <span>HP Life · 2024</span>
+              </div>
+              <div class="cert-badge">2024</div>
+            </div>
+          </div>
+        </div>
+        <div class="edu-col">
+          <h3 class="sub-title"><i class="fas fa-graduation-cap accent"></i> Education</h3>
+          <div class="edu-list">
+            <div class="edu-card">
+              <div class="edu-year">2025 – Present</div>
+              <div class="edu-info">
+                <strong>Engineering Cycle</strong>
+                <span>ESPRIT — Private Higher School of Engineering and Technology</span>
+                <span class="edu-location"><i class="fas fa-map-marker-alt"></i> Cherguia2, Tunis</span>
+              </div>
+            </div>
+            <div class="edu-card">
+              <div class="edu-year">2022</div>
+              <div class="edu-info">
+                <strong>Bachelor's Degree in Computer Science</strong>
+                <span>Polytechnic — International Program</span>
+                <span class="edu-spec">Specialization: Software Engineering & Information Systems</span>
+                <span class="edu-location"><i class="fas fa-map-marker-alt"></i> Lac1, Tunis</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title" data-en="Get In <span class='accent'>Touch</span>" data-fr="Me <span class='accent'>Contacter</span>">Get In <span class="accent">Touch</span></h2>
+      <p class="contact-subtitle" data-en="I'm currently open to new opportunities. Whether you have a project in mind or just want to say hi — my inbox is always open." data-fr="Je suis ouverte à de nouvelles opportunités. Que vous ayez un projet en tête ou que vous vouliez simplement dire bonjour — ma boîte mail est toujours ouverte.">I'm currently open to new opportunities. Whether you have a project in mind or just want to say hi — my inbox is always open.</p>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:jemaanadine24@gmail.com">jemaanadine24@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <strong>Phone</strong>
+              <a href="tel:+21656077475">+216 56 077 475</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+            <div>
+              <strong>LinkedIn</strong>
+              <a href="https://linkedin.com/in/jemaa-nadine-62451626a" target="_blank">jemaa-nadine</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fab fa-github"></i></div>
+            <div>
+              <strong>GitHub</strong>
+              <a href="https://github.com/NadineNJ" target="_blank">NadineNJ</a>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <input type="text" id="name" placeholder="Your Name" required />
+            <label for="name">Your Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" placeholder="Your Email" required />
+            <label for="email">Your Email</label>
+          </div>
+          <div class="form-group">
+            <input type="text" id="subject" placeholder="Subject" required />
+            <label for="subject">Subject</label>
+          </div>
+          <div class="form-group">
+            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+            <label for="message">Your Message</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <span class="logo-bracket">&lt;</span>NJ<span class="logo-bracket">/&gt;</span>
+      </div>
+      <p>Designed & Built by <span class="accent">Jemaa Nadine</span></p>
+      <div class="footer-socials">
+        <a href="https://github.com/NadineNJ" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/jemaa-nadine-62451626a" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:jemaanadine24@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
