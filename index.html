@@ -4,17 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jemaa Nadine | Full-Stack & AI Developer</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%237c3aed'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='26' fill='white'>NJ</text></svg>" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%237B61FF'/><stop offset='100%25' stop-color='%2300D4AA'/></linearGradient></defs><polygon points='32,4 60,20 60,44 32,60 4,44 4,20' fill='url(%23g)'/><text x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='800' font-size='20' fill='white'>NJ</text></svg>" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 
   <!-- Animated background -->
-  <div class="bg-grid"></div>
+  <canvas id="particles-canvas"></canvas>
+  <div class="cursor-dot" id="cursorDot"></div>
   <div class="cursor-glow" id="cursorGlow"></div>
 
   <!-- NAV -->
@@ -35,6 +36,18 @@
       <span class="lang-active">EN</span><span class="lang-sep">|</span><span class="lang-other">FR</span>
     </button>
   </nav>
+
+  <!-- FLOATING SHAPES -->
+  <div class="floating-shapes" aria-hidden="true">
+    <div class="shape shape-1">✦</div>
+    <div class="shape shape-2">&lt;/&gt;</div>
+    <div class="shape shape-3">◈</div>
+    <div class="shape shape-4">★</div>
+    <div class="shape shape-5">{ }</div>
+    <div class="shape shape-6">◉</div>
+    <div class="shape shape-7">✦</div>
+    <div class="shape shape-8">⬡</div>
+  </div>
 
   <!-- HERO -->
   <section id="hero">
@@ -78,6 +91,32 @@
     <div class="scroll-indicator">
       <span>Scroll</span>
       <div class="scroll-line"></div>
+    </div>
+
+    <!-- ROBOT MASCOT -->
+    <div class="mascot" aria-hidden="true">
+      <div class="mascot-body">
+        <div class="mascot-head">
+          <div class="mascot-eye left"><div class="mascot-pupil"></div></div>
+          <div class="mascot-eye right"><div class="mascot-pupil"></div></div>
+          <div class="mascot-mouth"></div>
+          <div class="mascot-antenna"><div class="mascot-antenna-tip"></div></div>
+        </div>
+        <div class="mascot-torso">
+          <div class="mascot-screen">
+            <span class="mascot-code">&lt;NJ/&gt;</span>
+          </div>
+        </div>
+        <div class="mascot-arms">
+          <div class="mascot-arm left"></div>
+          <div class="mascot-arm right"></div>
+        </div>
+        <div class="mascot-legs">
+          <div class="mascot-leg left"></div>
+          <div class="mascot-leg right"></div>
+        </div>
+      </div>
+      <div class="mascot-shadow"></div>
     </div>
   </section>
 

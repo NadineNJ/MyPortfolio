@@ -395,3 +395,184 @@ langToggle.addEventListener('click', () => {
   currentLang = currentLang === 'en' ? 'fr' : 'en';
   applyLanguage(currentLang);
 });
+
+
+// ─────────────────────────────────────────────
+//  CURSOR DOT
+//  Small glowing dot that follows the mouse precisely
+// ─────────────────────────────────────────────
+const cursorDot = document.getElementById('cursorDot');
+
+document.addEventListener('mousemove', (e) => {
+  // Dot follows instantly
+  cursorDot.style.left = e.clientX + 'px';
+  cursorDot.style.top  = e.clientY + 'px';
+  // Glow follows with slight lag (handled by CSS transition)
+  cursorGlow.style.left = e.clientX + 'px';
+  cursorGlow.style.top  = e.clientY + 'px';
+});
+
+// Dot grows on hovering clickable elements
+document.querySelectorAll('a, button, .project-card, .tag').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursorDot.style.transform = 'translate(-50%,-50%) scale(2.5)';
+    cursorDot.style.background = 'var(--teal)';
+  });
+  el.addEventListener('mouseleave', () => {
+    cursorDot.style.transform = 'translate(-50%,-50%) scale(1)';
+    cursorDot.style.background = 'var(--purple)';
+  });
+});
+
+
+// ─────────────────────────────────────────────
+//  PARTICLE CANVAS
+//  Draws floating connected dots in the background
+// ─────────────────────────────────────────────
+const canvas = document.getElementById('particles-canvas');
+const ctx    = canvas.getContext('2d');
+
+let particles = [];
+let mouse = { x: null, y: null };
+
+/**
+ * Resize canvas to fill the window
+ */
+function resizeCanvas() {
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+document.addEventListener('mousemove', (e) => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+
+/**
+ * Particle class — each dot on the canvas
+ */
+class Particle {
+  constructor() { this.reset(); }
+
+  reset() {
+    this.x    = Math.random() * canvas.width;
+    this.y    = Math.random() * canvas.height;
+    this.vx   = (Math.random() - 0.5) * 0.4;
+    this.vy   = (Math.random() - 0.5) * 0.4;
+    this.size = Math.random() * 1.5 + 0.5;
+    // Alternate between purple and teal
+    this.color = Math.random() > 0.5 ? '123,97,255' : '0,212,170';
+  }
+
+  update() {
+    this.x += this.vx;
+    this.y += this.vy;
+    // Wrap around edges
+    if (this.x < 0) this.x = canvas.width;
+    if (this.x > canvas.width)  this.x = 0;
+    if (this.y < 0) this.y = canvas.height;
+    if (this.y > canvas.height) this.y = 0;
+  }
+
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(${this.color}, 0.5)`;
+    ctx.fill();
+  }
+}
+
+// Create 80 particles
+for (let i = 0; i < 80; i++) particles.push(new Particle());
+
+/**
+ * drawLines()
+ * Draws faint lines between nearby particles (and toward mouse)
+ */
+function drawLines() {
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx   = particles[i].x - particles[j].x;
+      const dy   = particles[i].y - particles[j].y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+
+      if (dist < 120) {
+        const alpha = (1 - dist / 120) * 0.12;
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.strokeStyle = `rgba(123,97,255,${alpha})`;
+        ctx.lineWidth = 0.6;
+        ctx.stroke();
+      }
+    }
+
+    // Connect to mouse
+    if (mouse.x && mouse.y) {
+      const dx   = particles[i].x - mouse.x;
+      const dy   = particles[i].y - mouse.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 150) {
+        const alpha = (1 - dist / 150) * 0.2;
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(mouse.x, mouse.y);
+        ctx.strokeStyle = `rgba(0,212,170,${alpha})`;
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+      }
+    }
+  }
+}
+
+/**
+ * animateParticles()
+ * Main animation loop — clears canvas, updates and draws each frame
+ */
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => { p.update(); p.draw(); });
+  drawLines();
+  requestAnimationFrame(animateParticles);
+}
+animateParticles();
+
+
+// ─────────────────────────────────────────────
+//  CLICK RIPPLE EFFECT
+//  Creates a cartoon "pop" ripple on every click
+// ─────────────────────────────────────────────
+document.addEventListener('click', (e) => {
+  // Don't create ripple on form elements
+  if (['INPUT','TEXTAREA','BUTTON','SELECT'].includes(e.target.tagName)) return;
+
+  const ripple = document.createElement('div');
+  ripple.style.cssText = `
+    position: fixed;
+    left: ${e.clientX}px;
+    top: ${e.clientY}px;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid var(--purple);
+    transform: translate(-50%, -50%) scale(0);
+    pointer-events: none;
+    z-index: 9998;
+    animation: rippleOut 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  `;
+  document.body.appendChild(ripple);
+  setTimeout(() => ripple.remove(), 600);
+});
+
+// Inject ripple keyframe into the page
+const rippleStyle = document.createElement('style');
+rippleStyle.textContent = `
+  @keyframes rippleOut {
+    0%   { transform: translate(-50%,-50%) scale(0);  opacity: 1; }
+    60%  { transform: translate(-50%,-50%) scale(8);  opacity: 0.6; }
+    100% { transform: translate(-50%,-50%) scale(14); opacity: 0; }
+  }
+`;
+document.head.appendChild(rippleStyle);
