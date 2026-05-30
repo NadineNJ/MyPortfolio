@@ -68,7 +68,7 @@
   <span class="c-prop">role</span>: <span class="c-str">"Full-Stack & AI Dev"</span>,
   <span class="c-prop">stack</span>: [<span class="c-str">"Angular"</span>, <span class="c-str">"Node.js"</span>,
            <span class="c-str">"Python"</span>, <span class="c-str">"Flask"</span>],
-  <span class="c-prop">ai</span>: [<span class="c-str">"CNN"</span>, <span class="c-str">"MediaPipe"</span>,
+  <span class="c-prop">ai</span>: [<span class="c-str">"CNN"</span>, <span class="c-str">"LLaMA 3.3"</span>,
        <span class="c-str">"Scikit-learn"</span>],
   <span class="c-prop">available</span>: <span class="c-keyword">true</span>,
   <span class="c-prop">passion</span>: <span class="c-str">"Building things that matter"</span>
@@ -90,8 +90,8 @@
           <p data-en="I'm a <strong>Junior Software Developer</strong> based in Ben Arous, Tunisia, currently pursuing an Engineering Cycle at <strong>ESPRIT</strong>. I specialize in building full-stack web applications and integrating AI/ML models into real-world products." data-fr="Je suis une <strong>développeuse logicielle junior</strong> basée à Ben Arous, Tunisie, actuellement en cycle ingénieur à <strong>ESPRIT</strong>. Je me spécialise dans le développement d'applications web full-stack et l'intégration de modèles IA/ML.">
             I'm a <strong>Junior Software Developer</strong> based in Ben Arous, Tunisia, currently pursuing an Engineering Cycle at <strong>ESPRIT</strong>. I specialize in building full-stack web applications and integrating AI/ML models into real-world products.
           </p>
-          <p data-en="My journey spans from responsive frontends to intelligent backends — I've built a skin cancer detection system, an e-commerce platform with an AI chatbot, and I'm currently working on a real-time sign language recognition system." data-fr="Mon parcours va des interfaces responsives aux backends intelligents — j'ai développé un système de détection du cancer de la peau, une plateforme e-commerce avec chatbot IA, et je travaille sur un système de reconnaissance de la langue des signes en temps réel.">
-            My journey spans from responsive frontends to intelligent backends I've built a skin cancer detection system, an e-commerce platform with an AI chatbot, and I'm currently working on a real-time sign language recognition system.
+          <p data-en="From healthcare AI to civic platforms and conversational agents, my work covers the full stack. I've shipped a skin cancer detection system, a full e-commerce platform, and a language tutor chatbot powered by LLaMA 3.3." data-fr="De l'IA médicale aux plateformes citoyennes et aux agents conversationnels, mon travail couvre tout le spectre. J'ai livré un système de détection du cancer de la peau, une plateforme e-commerce complète et un chatbot tuteur de langues propulsé par LLaMA 3.3.">
+            From healthcare AI to civic platforms and conversational agents, my work covers the full stack. I've shipped a skin cancer detection system, a full e-commerce platform, and a language tutor chatbot powered by LLaMA 3.3.
           </p>
           <p data-en="I thrive in dynamic environments, love solving complex problems, and I'm always looking for the next challenge that pushes my skills further." data-fr="Je m'épanouis dans des environnements dynamiques, j'aime résoudre des problèmes complexes et je suis toujours à la recherche du prochain défi qui pousse mes compétences plus loin.">
             I thrive in dynamic environments, love solving complex problems, and I'm always looking for the next challenge that pushes my skills further.
@@ -325,17 +325,18 @@
         </div>
 
         <div class="project-card featured" data-category="ai">
-          <div class="project-badge">🤟 In Progress</div>
-          <div class="project-icon"><i class="fas fa-hand-paper"></i></div>
-          <h3>Sign Language Recognition System</h3>
-          <p>Real-time hand gesture-to-text translation system using a webcam. Built a custom dataset from short recorded video clips representing each sign category and currently training the model toward reliable gesture classification. The goal is to embed sign language communication directly into messaging interfaces.</p>
+          <div class="project-badge">� AI / LLM</div>
+          <div class="project-icon"><i class="fas fa-comments"></i></div>
+          <h3>Maxin — AI Language Tutor Chatbot</h3>
+          <p>An intelligent language tutor chatbot where users can have full conversations with an agent named Maxin in either English or German. The server automatically detects the language being used and adapts the agent's behavior accordingly, making the learning experience feel natural. Powered by Groq's LLaMA 3.3 70B for fluid, context-aware responses, with a lightweight frontend and a FastAPI backend exposing a clean REST API.</p>
           <div class="project-tech">
-            <span>Python</span><span>MediaPipe</span><span>OpenCV</span><span>TensorFlow</span><span>NumPy</span>
+            <span>Python</span><span>FastAPI</span><span>Groq API</span><span>LLaMA 3.3 70B</span><span>HTML5</span><span>CSS3</span><span>JavaScript</span>
           </div>
           <div class="project-highlights">
-            <div class="highlight-item"><i class="fas fa-check-circle"></i> Custom dataset built from recorded videos</div>
-            <div class="highlight-item"><i class="fas fa-check-circle"></i> Real-time hand tracking via MediaPipe</div>
-            <div class="highlight-item"><i class="fas fa-check-circle"></i> Target: messaging app integration</div>
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> Automatic language detection (EN / DE)</div>
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> LLaMA 3.3 70B via Groq API</div>
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> FastAPI REST backend</div>
+            <div class="highlight-item"><i class="fas fa-check-circle"></i> Dynamic agent behavior per language</div>
           </div>
           <div class="project-links">
             <span class="project-link coming-soon"><i class="fas fa-clock"></i> Repo Coming Soon</span>
@@ -610,3 +611,6 @@
   <script src="script.js"></script>
 </body>
 </html>
+
+
+
