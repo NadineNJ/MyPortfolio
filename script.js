@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ============================================================
  *  portfolio.js — Main JavaScript for Jemaa Nadine's Portfolio
  * ============================================================
@@ -264,7 +264,7 @@ contactForm.addEventListener('submit', (e) => {
   const message   = document.getElementById('message').value.trim();
 
   // Show loading state on the button
-  btn.innerHTML  = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+  btn.innerHTML  = currentLang === 'fr' ? '<i class="fas fa-spinner fa-spin"></i> Envoi...' : '<i class="fas fa-spinner fa-spin"></i> Sending...';
   btn.disabled   = true;
 
   /**
@@ -283,27 +283,35 @@ contactForm.addEventListener('submit', (e) => {
     reply_to:   fromEmail
   })
   .then(() => {
-    // Success — show confirmation
-    btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+    // Success — show confirmation in current language
+    btn.innerHTML = currentLang === 'fr'
+      ? '<i class="fas fa-check"></i> Message envoyé !'
+      : '<i class="fas fa-check"></i> Message Sent!';
     btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
     contactForm.reset();
 
     // Reset button after 3 seconds
     setTimeout(() => {
-      btn.innerHTML        = '<i class="fas fa-paper-plane"></i> Send Message';
+      btn.innerHTML = currentLang === 'fr'
+        ? '<i class="fas fa-paper-plane"></i> Envoyer'
+        : '<i class="fas fa-paper-plane"></i> Send Message';
       btn.style.background = '';
       btn.disabled         = false;
     }, 3000);
   })
   .catch((error) => {
-    // Failure — show error and re-enable button
+    // Failure — show error in current language
     console.error('EmailJS error:', error);
-    btn.innerHTML        = '<i class="fas fa-exclamation-circle"></i> Failed — Try Again';
+    btn.innerHTML = currentLang === 'fr'
+      ? '<i class="fas fa-exclamation-circle"></i> Échec — Réessayer'
+      : '<i class="fas fa-exclamation-circle"></i> Failed — Try Again';
     btn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
     btn.disabled         = false;
 
     setTimeout(() => {
-      btn.innerHTML        = '<i class="fas fa-paper-plane"></i> Send Message';
+      btn.innerHTML = currentLang === 'fr'
+        ? '<i class="fas fa-paper-plane"></i> Envoyer'
+        : '<i class="fas fa-paper-plane"></i> Send Message';
       btn.style.background = '';
     }, 3000);
   });
@@ -337,7 +345,7 @@ let currentLang  = 'en'; // default language
 // French translations for the typewriter roles
 const typewriterRoles = {
   en: ['Full-Stack Developer', 'AI / ML Engineer', 'Angular Developer', 'Python Developer', 'Problem Solver'],
-  fr: ['Développeuse Full-Stack', 'Ingénieure IA / ML', 'Développeuse Angular', 'Développeuse Python', 'Résolveure de problèmes']
+  fr: ['Développeuse Full-Stack', 'Ingénieure IA / ML', 'Développeuse Angular', 'Développeuse Python', 'Analyste & développeuse']
 };
 
 /**
@@ -576,3 +584,4 @@ rippleStyle.textContent = `
   }
 `;
 document.head.appendChild(rippleStyle);
+
